@@ -1,0 +1,12 @@
+<h1>Add Choices to Poll: {{ poll.question }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Choice</button>
+</form>
+<ul>
+    {% for choice in choices %}
+        <li>{{ choice.choice_text }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'index' %}">Go back</a>

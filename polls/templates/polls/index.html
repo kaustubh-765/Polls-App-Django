@@ -1,0 +1,7 @@
+<h1>Polls</h1>
+<a href="{% url 'create_poll' %}">Create a new poll</a>
+<ul>
+    {% for poll in polls %}
+        <li><a href="{% url 'vote' poll.id %}">{{ poll.question }}</a></li>
+    {% endfor %}
+</ul>
